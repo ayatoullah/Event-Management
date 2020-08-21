@@ -1,0 +1,21 @@
+<Html>
+    <head></head>
+<body>
+    <div>
+        welcome<%= user%>
+        <% let date=new Date()%>
+        today is <%=date%>
+        <% if(date.getMinutes()>20){ %>
+            greaterthan
+            <%}else{%>
+                smaller than
+                <%}%>
+                
+                <% array.forEach((elm)=>{%>
+                        <li><%=elm%></li>
+                <%})%>
+
+    </div>
+
+</body>  
+</Html>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+            <%include ../layout/header%>   
+    </head>
+    <body>
+        <h3>Speakers List</h3>
+       
+        <table style="border:solid 3px red">
+            <tr>
+                <th>id</th><th>name</th><th>name</th><th>image</th><th>edit</th><th>delete</th>
+            </tr>
+            
+            <% data.forEach((elm)=>{%>
+                <tr>
+                    <td><%=elm._id%></td>
+                    <td><%=elm.name%></td>
+                    <td><%=elm.title%></td>
+                    <td><image src="images/<%=elm.image%>" style="width:50px;height:50px"></image></td>
+                    
+                    <td><a href="edit/<%=elm._id%>">Edit</a></td>    
+                    <td><a href="delete/<%=elm._id%>">delete</a></td>               
+                </tr>
+            <%})%>
+            
+        </table>
+        <%include ../layout/footer%>
+    </body>
+</html>

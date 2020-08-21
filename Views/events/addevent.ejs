@@ -1,0 +1,28 @@
+<%include ../layout/header%>
+<body>
+    <form action="/events/add" method="post">
+        id:<input type="text" name="_id"></br>
+      
+        title:<input type="text" name="title"></br>
+     
+        main speaker:<select name="mainspeaker">
+                        <%speakers.forEach((speaker)=>{%>
+                    
+                        <option value="<%=speaker._id%>"><%=speaker.name%></option>
+                        <%})%>
+                    </select>
+        </br><br>
+        <h2>Other speakers</h2>
+        <select name="otherspeakers" multiple>
+            <%speakers.forEach((speaker)=>{%>
+        
+            <option value="<%=speaker._id%>"><%=speaker.name%></option>
+            <%})%>
+        </select>
+        </br>
+
+        <input type="submit" name="save">
+    </form>
+</body>
+
+<%include ../layout/footer%>

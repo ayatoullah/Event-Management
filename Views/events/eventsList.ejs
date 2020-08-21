@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <%include ../layout/header%>
+    </head>
+    <body>
+            
+        <h3> events List </h3>
+        <table style="border:3px solid green">
+                <tr><th>id</th><th>title</th><th>speakername</th><th>otherspeakers</th><th>Delete</th><th>Edit</th></tr>
+                <% data.forEach((event)=>{ %>
+                                                                                                      <!-- //first <%= event.mainSpeakerId%>                          -->
+                <tr>
+                    <th> <%= event._id%></th>
+                    <th> <%= event.title%></th>
+                    <th> <%= event.mainspeaker.name%></th>
+                    <th> 
+                        <select multiple>
+                        <% event.otherspeakers.forEach((elm)=>{%>
+                            
+                         <option><%= elm.name%></option> 
+                        <%})%>
+                    </select>
+                </th>
+                    
+                    <td>
+                        <a href="/events/edit/<%= event._id%>" class="btn btn-primary">Edit</a>
+                    </td>
+                    <td>    
+                        <a href="/events/delete/<%= event._id%>" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>               
+            <%})%>
+       </table>
+        <br/><%include ../layout/footer%>
+    </body>
+</html>

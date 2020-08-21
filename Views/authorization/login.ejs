@@ -1,0 +1,16 @@
+<%include ../layout/header%>
+<html>
+    <head></head>
+    <body>
+        <div>
+            <%=msg%>
+        </div>
+        <form method="post" action="/login">
+                <input type="text" name="UserName" value="eman">
+                <input type="password" name="password" value="25">
+                <input type="submit" value="send">
+        </form>
+        
+    </body>
+</html>
+<%include ../layout/footer%>
